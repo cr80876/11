@@ -15,6 +15,7 @@ import java.io.IOException;
 
 @WebServlet(name = "LoginServlet" ,urlPatterns = "/loginServlet")
 public class LoginServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         // 获取参数
@@ -25,13 +26,17 @@ public class LoginServlet extends HttpServlet {
         // 验证
         GuashenDao dao = new GuashenDaoimpl();
         User user = dao.getUser(userzh, usermm);
-        if (user != null) {  //成功
-            HttpSession session = request.getSession();  //通过request获取session
-            session.setAttribute("user", user); // 将信息保存在Session中（向其它页面共享数据）
-            response.sendRedirect("login_cgym.jsp"); // 重置页面（前转）：首面
-        } else { //失败
+        if (user != null) {
+            //成功//通过request获取session// 将信息保存在Session中（向其它页面共享数据）
+            HttpSession session = request.getSession();
+            session.setAttribute("user", user);
+            response.sendRedirect("index.jsp");
+            // 重置页面（前转）：首面
+        } else {
+            //失败
             request.setAttribute("error", "账户或密码错误！");
-            request.getRequestDispatcher("login_user.jsp").forward(request, response); // 前面页面：登陆页面
+            request.getRequestDispatcher("login_user.jsp").forward(request, response);
+            // 前面页面：登陆页面
         }
     }
 

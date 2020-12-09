@@ -1,12 +1,16 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
+<<<<<<< HEAD
   User: 陈睿
+=======
+  User: 刘云龙
+>>>>>>> 73eb9a99a579cf779934595ff0fca8f783137eb7
   Date: 2020/11/23
   Time: 8:38
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!DOCTYPE html>
 <!-- saved from url=(0017)http://wg1000.cn/ -->
 <html lang="en">
@@ -109,6 +113,15 @@
       }
     })();
   </script>
+  <script>
+    function logout() {
+      var result = confirm("您确定要退出当前登陆吗？");
+      if (result) {
+        //执行删除
+        window.location.href = 'logout.jsp';
+      }
+    }
+  </script>
 </head>
 <body>
 <!--导航条-->
@@ -125,9 +138,19 @@
       <li><a href="lianxi.jsp">联系我们</a></li>
     </ul>
 
-    <div class="header-userbox">
-      <p><a href="login_user.jsp" class="userloginbtn"><i class="iconfont icon-dengluyonghuming"></i>立即登录</a></p>
-    </div>
+<c:if test="${sessionScope['user'] eq null}">
+     <div class="header-userbox">
+       <p><a href="login_user.jsp" class="userloginbtn"><i class="iconfont icon-dengluyonghuming"></i>立即登录</a></p>
+
+     </div>
+    </c:if>
+
+    <c:if test="${sessionScope['user'] ne null}">
+      <div class="header-userbox" >
+        <p><a href="login_user.jsp" class="userloginbtn"><i class="iconfont icon-dengluyonghuming"></i>${sessionScope['user'].usermc}</a></p>
+        <a href="loginout.jsp" class="userloginbtn" onclick="logout()">退出</a>
+       </div>
+    </c:if>
   </div>
 </div>
 
@@ -360,3 +383,14 @@
 </body>
 </html>
 
+=======
+<html>
+  <head>
+    <title>挂神-游戏辅助器</title>
+  </head>
+  <body>
+  挂神-游戏辅助器
+  <A href="login_user.jsp">登陆</A>
+  </body>
+</html>
+>>>>>>> 73eb9a99a579cf779934595ff0fca8f783137eb7

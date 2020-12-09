@@ -1,16 +1,19 @@
 package com.cdvtc.guashen.dao;
-
 import com.cdvtc.guashen.db.DBConnection;
 import com.cdvtc.guashen.model.User;
 import com.cdvtc.guashen.model.Waigua;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * @author hp
  */
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class GuashenDaoimpl implements GuashenDao{
     DBConnection db = new DBConnection();
 

@@ -8,8 +8,8 @@ import java.util.List;
 public interface GuashenDao {
 
     /**
-     *@param userzh
-     *@param usermm
+     *@param
+     *@param
      *@return 用户对象，null表示未找到
      * 根据用户账号和密码，获取用户信息
      */
@@ -22,4 +22,5 @@ public interface GuashenDao {
     void addUser(User user);
 
     List<Waigua> getAllWaigua();
+
 }

@@ -29,6 +29,28 @@
                 <canvas width="230" height="230" style="display: none;"></canvas><img style="display: initial;" src="img/zhifu.png"></div>
             <div class="detail" id="orderDetail">
                 <a href="javascript:void(0)" class="arrow"><i class="ico-arrow"></i></a>
+                <div class="kami">
+                    <p>点击提取卡密：<a href = "JavaScript:void(0)" onclick = "openDialog()">我已支付提取卡密</a></p>
+                    <div id="light" class="white_content">
+                        <table>
+                            <tr>
+                                <td>您的卡密信息为</td>
+                                <td>[C15H4S6J8D1O56S2B5J4X2U7X57NJF87RA12V849EG7]</td>
+                            </tr>
+                            <tr>
+                                <td>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</td>
+                                <td>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</td>
+
+                            <tr>
+                            <td>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</td>
+                            <td>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</td>
+
+                            </tr>
+                        </table>
+                        <a href = "javascript:void(0)" onclick = "closeDialog()">点这里关闭本窗口</a>
+                    </div>
+                    <div id="fade" class="black_overlay"></div>
+                </div>
             </div>
             <div class="tip">
                 <span class="dec dec-left"></span>
@@ -36,7 +58,7 @@
                 <div class="ico-scan"></div>
                 <div class="tip-text">
                     <p>请使用支付宝扫一扫</p>
-                    <p>扫描二维码完成支付</p>
+
                 </div>
             </div>
             <div class="tip-text">
@@ -95,6 +117,16 @@
                 });
             }
             window.onload = loadmsg();
+            $(function(){
+            })
+            function openDialog(){
+                document.getElementById('light').style.display='block';
+                document.getElementById('fade').style.display='block'
+            }
+            function closeDialog(){
+                document.getElementById('light').style.display='none';
+                document.getElementById('fade').style.display='none'
+            }
         </script>
 
     </div>

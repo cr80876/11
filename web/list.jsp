@@ -67,10 +67,6 @@
 <div class="common-container goodslist-container">
     <!--条件-->
     <div class="goodslist-menu">
-
-
-
-
         <div class="goodslist-header">
             <div class="index-header-search">
                 <form class="layui-form" action="/goodscate/index.html" method="post">
@@ -215,7 +211,7 @@
                     <i class="iconfont icon-aixin2"></i>
                 </div>
                 <div class="goodsbox-btn">
-                    <a class="layui-btn layui-btn-normal layui-btn-sm" href="">立即购买</a>
+                    <a class="layui-btn layui-btn-normal layui-btn-sm" href="goumai.jsp?jg=${waiguaList.wgjg} ">立即购买</a>
                 </div>
             </div>
             </c:forEach>
